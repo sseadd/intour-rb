@@ -116,7 +116,7 @@
   .ticker { background: var(--green); color: #eaf4ec; overflow: hidden; padding: 14px 0; }
   .ticker-track { display: flex; white-space: nowrap; animation: tick 38s linear infinite; font-family: var(--disp); font-size: 15px; font-weight: 600; letter-spacing: .06em; }
   .ticker-track span { padding: 0 22px; }
-  .ticker-track span::after { content: '✦'; margin-left: 44px; color: var(--gold); }
+  .ticker-track span::after { content: ''; margin-left: 44px; color: var(--gold); }
   @keyframes tick { to { transform: translateX(-50%); } }
 
   section { padding: 96px 0; }
@@ -253,9 +253,24 @@
     .foot-grid { grid-template-columns: 1fr 1fr; }
     section { padding: 66px 0; }
     .sticker { display: none; }
+    /* Быстрее конвейер на узких экранах */
+    .ticker-track { animation-duration: 20s; }
   }
   @media (max-width: 560px) {
     .dirs, .steps, .foot-grid { grid-template-columns: 1fr; }
+    /* Статистика в 2 строки на мобильных */
+    .hero-stats {
+      gap: 24px;
+    }
+    .hero-stats > div {
+      flex: 0 0 calc(50% - 12px);
+    }
+    .hero-stats b {
+      font-size: 24px;
+    }
+    .hero-stats span {
+      font-size: 10px;
+    }
   }
 </style>
 </head>
