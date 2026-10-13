@@ -285,7 +285,7 @@
 
 <header>
   <div class="head-in">
-    <a href="#" class="logo">
+    <a href="" class="logo">
       <svg><use href="#kurai"/></svg>
       <span><b>ИНТУР РБ</b><span>яркие туры по Башкирии</span></span>
     </a>
@@ -610,7 +610,7 @@
   </div>
 </footer>
 
-<div class="toast" id="toast">Заявка улетела! Ответим в течение часа 🤙</div>
+<div class="toast" id="toast">Заявка улетела! В скором времени ответим.</div>
 
 <script>
   const io = new IntersectionObserver(es => {
@@ -622,7 +622,7 @@
   let tId;
   document.querySelectorAll('[data-add]').forEach(b => {
     b.addEventListener('click', () => {
-      toast.textContent = `${b.dataset.add} — место держим! Допишите заявку ниже 🤙`;
+      toast.textContent = `${b.dataset.add} — место держим! Допишите заявку ниже.`;
       toast.classList.add('show');
       clearTimeout(tId);
       tId = setTimeout(() => toast.classList.remove('show'), 2600);
